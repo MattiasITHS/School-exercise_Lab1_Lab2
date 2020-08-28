@@ -6,11 +6,11 @@ public class Lesson4{
     int number2 = sc.nextInt();
     for(int i =number;i<=number2;i++){
       if(i%2==0){
-    System.out.println(i);
-  }else{
-    i=i+1;
-    System.out.println(i);
-  }
+        System.out.println(i);
+      }else{
+        i=i+1;
+        System.out.println(i);
+      }
     }
   }
 }
