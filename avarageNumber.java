@@ -17,6 +17,6 @@ public class avarageNumber{
       double b= input.nextInt();
       double sum = a+b;
       double result = sum/2;
-    
+
    }
 }
