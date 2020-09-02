@@ -9,7 +9,7 @@ import java.util.Scanner;
         if (authorised && i == 4){
           System.out.println("Lucky one, du lyckades på sista försöket");
         }else if (authorised){
-          System.out.println("Grattis! du har matat in rätt kod!");
+          System.out.println("Grattis! du har matat in rätt lösenord!");
           break;
       } else {
         System.out.println("FEL! Testa igen.");
