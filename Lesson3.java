@@ -7,6 +7,5 @@ public class Lesson3{
     for(int i =number;i>=number2;i--){
       System.out.println(i);
     }
-
   }
 }
