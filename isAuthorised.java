@@ -8,11 +8,11 @@ import java.util.Scanner;
         boolean authorised = isAuthorised();
         if (authorised && i == 4){
           System.out.println("Lucky one, du lyckades på sista försöket");
-        }else if (authorised){
+        } else if (authorised){
           System.out.println("Grattis! du har matat in rätt lösenord!");
           break;
-      } else {
-        System.out.println("FEL! Testa igen.");
+          } else {
+            System.out.println("FEL! Testa igen.");
         }
       }
     }
