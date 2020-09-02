@@ -32,6 +32,6 @@ public class Metod{
   }
   public static int multiplyXwithY(int x, int y){
     System.out.println(x*y);
-    return x*y;
+    return x*y; 
   }
 }
