@@ -3,9 +3,8 @@ import java.util.Scanner;
 public class isEven{
   public static Scanner input = new Scanner (System.in);
   public static void main(String[] args){
-
-    isEven();
     
+    isEven();
   }
   public static void isEven(){
     System.out.println("Mata in ett tal");

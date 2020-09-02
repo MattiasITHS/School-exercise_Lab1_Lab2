@@ -7,7 +7,6 @@ public class avarageNumber{
     System.out.println("Hello, input 2 numbers;");
 
     System.out.println("The avarage of your input is "+addAvarage());
-
   }
   public static double number(){
     double a = input.nextInt();
