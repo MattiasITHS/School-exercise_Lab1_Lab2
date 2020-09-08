@@ -1,43 +1,40 @@
 public class practiceArray{
   public static void main(String[] args){
 
-    int[] number = {1,2,3};
-    int[] numbers = new int[3];
-    numbers[0] = 1;
-    numbers[1] = 2;
-    numbers[2] = 3;
+    int[] myArray = createArray(8);
+    System.out.println();
+    System.out.println(myArray[4]);//övning 1
+    System.out.println(myArray[3]);
 
-    createArray(0);
-    printArray(number);
-    doubleUpArray(number);
+    printArray(myArray); // övning 2
+    System.out.println();
+
+    int[] doubleArray = doubleUpArray(myArray); //övning 3
+    printArray(doubleArray); //kan aldrig ändra storleken på en array.
+
 
   }
-  public static void createArray(int x){
-    int[] array = new int [6];
-    array[0] = 1;
-    array[1] = 2;
-    array[2] = 3;
-    array[3] = 4;
-    array[4] = 5;
-    array[5] = 6;
-    for(int i = 0; i < array.length; i++){
+  public static int[] createArray(int x){
+    int[] array = new int[x];
+    for(int i = 0; i < x; i++){
+      array[i] = i+1;
       System.out.print(array[i]);
     }
-    System.out.println("");
+    return array;
   }
   public static void printArray(int[] arr){
-    for(int i = 0; i < arr.length; i++){
-      System.out.print(arr[i]);
+    System.out.print("[");
+    for(int i = 0; i < arr.length-1; i++){
+      System.out.print(arr[i]+ ",");
     }
-    System.out.println("");
+    System.out.println(arr[arr.length-1] + "]");
 
   }
-  public static void doubleUpArray (int[] arr){
-
-    int[] array = new int[6];
-    int[] arrays = {1,2,3,4,5,6};
-    for(int i = 0; i < arrays.length; i++){
-      System.out.print(arrays[i]);
+  public static int[] doubleUpArray (int[] array){
+    int[] newArray = new int[array.length*2];
+    for(int i = 0; i < array.length; i++){
+      newArray[i] = array[i];
     }
+    return newArray;
   }
 }
