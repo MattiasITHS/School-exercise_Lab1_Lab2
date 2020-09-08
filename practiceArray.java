@@ -3,13 +3,14 @@ public class practiceArray{
 
     int[] myArray = createArray(8);
     System.out.println();
-    System.out.println(myArray[4]);//övning 1
+
+    System.out.println(myArray[4]);                //övning 1
     System.out.println(myArray[3]);
 
-    printArray(myArray); // övning 2
+    printArray(myArray);                           // övning 2
     System.out.println();
 
-    int[] doubleArray = doubleUpArray(myArray); //övning 3
+    int[] doubleArray = doubleUpArray(myArray);    //övning 3
     printArray(doubleArray); //kan aldrig ändra storleken på en array.
 
 
