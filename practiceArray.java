@@ -21,7 +21,7 @@ public class practiceArray{
       array[i] = i+1;
       System.out.print(array[i]);
     }
-    return array;
+    return array; 
   }
   public static void printArray(int[] arr){
     System.out.print("[");

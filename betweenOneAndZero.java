@@ -13,7 +13,7 @@ import java.util.Scanner;
         System.out.println("Dina nummer är strikt mindre än 1 men större än 0");
         return true;
       } else {
-        return false;
+        return false; 
       }
     }
   }

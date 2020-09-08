@@ -24,7 +24,7 @@ public class fourSame{
       if(a == b && b == c && c == d){
         return true;
       } else {
-        return false;
+        return false; 
     }
   }
 }
