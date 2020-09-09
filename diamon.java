@@ -19,8 +19,6 @@ public class diamon {
         System.out.print("*");
       }
         System.out.println("");
-
-
     }
     for(int i = noOfRows/2; i >= 1; i--) {
       for (int j = 1; j <= noOfRows-i; j++) {
@@ -30,10 +28,6 @@ public class diamon {
         System.out.print("*");
       }
         System.out.println("");
-
     }
-
-
-
   }
 }
