@@ -10,4 +10,20 @@ public class Person{ // #skapa en klass
     age = a;
     hungry = h;
   }
+
+  // public void setfirstName(String fn){
+  //   firstName = fn;
+  // }
+  //
+  // public String getfirstName(){
+  //   return firstName;
+  // }
+  //
+  // public void setage(int a){
+  //   age = a;
+  // }
+  // 
+  // public int getage(){
+  //   return age;
+  }
 }

@@ -4,13 +4,11 @@ public class HotDogSystem{
     Person p2 = new Person("Pierre","Alberto",31,false);
     Person p3 = new Person("Carolina","Hovde",30,true);
 
-
-
     // p2.firstName = "Peirre";
     // p2.lastName = "Alberto";
     // p2.age = 30;
     // p2.hungry = true;
-    // 
+    //
     // p3.firstName = "Carolina";
     // p3.lastName = "Hovde";
     // p3.age = 30;
