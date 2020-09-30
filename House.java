@@ -5,26 +5,36 @@ public class House{
   private String value;
   private String address;
   private int buildYear;
-  public House(int f, int a, String v, String ad, int by){
-    floors = f;
-    area = a;
-    value = v;
-    address = ad;
-    buildYear = by;
+
+  public House(){
+
+  }
+  public House(int floors){
+    this.floors = floors;
+  }
+  public House(int floors, int area, String value, String address, int buildYear){
+    this.floors = floors;
+    this.area = area;
+    this.value = value;
+    this.address = address;
+    this.buildYear = buildYear;
   }
   public int getArea(){
-    return area;
+    return this.area;
   }
   public int getFloors(){
-    return floors;
+    return this.floors;
   }
   public String getValue(){
-    return value;
+    return this.value;
   }
   public String getAddress(){
-    return address;
+    return this.address;
   }
   public int getBuildYear(){
-    return buildYear;
+    return this.buildYear;
+  }
+  public void setArea(int area){
+    this.area = area;
   }
 }
