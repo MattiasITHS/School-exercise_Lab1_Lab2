@@ -2,9 +2,10 @@ public class House{
   // huset ska ha antal våningar, yta, värde, address och byggnadsår.
   private int floors;
   private int area;
-  private String value;
+  private int value;
   private String address;
   private int buildYear;
+
 
   public House(){
 
@@ -12,7 +13,7 @@ public class House{
   public House(int floors){
     this.floors = floors;
   }
-  public House(int floors, int area, String value, String address, int buildYear){
+  public House(int floors, int area, int value, String address, int buildYear){
     this.floors = floors;
     this.area = area;
     this.value = value;
@@ -25,7 +26,7 @@ public class House{
   public int getFloors(){
     return this.floors;
   }
-  public String getValue(){
+  public int getValue(){
     return this.value;
   }
   public String getAddress(){
