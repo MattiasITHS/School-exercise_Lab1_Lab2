@@ -9,6 +9,9 @@ public class CarHouse{
   this.kmCounter = kmCounter;
   }
   public String toString(){
-    return brand + " " + value + " " + kmCounter;
+    return this.brand + " " + this.value + " " + this.kmCounter;
+  }
+  public String getCarBrand(){
+    return this.brand;
   }
 }

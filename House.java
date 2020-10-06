@@ -6,7 +6,6 @@ public class House{
   private String address;
   private int buildYear;
 
-
   public House(){
 
   }
