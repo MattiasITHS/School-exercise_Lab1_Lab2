@@ -10,9 +10,9 @@ public class HouseProgram{
     House h4 = new House();
     h4.setArea(55);
 
-    PersonHouse p1 = new PersonHouse("Mattias","Studerar", 32, "Man", 188, h1);
-    PersonHouse p2 = new PersonHouse("Karl","Montör", 40, "Man", 178, h1);
-    PersonHouse p3 = new PersonHouse("Cassandra","Studerar", 26, "Kvinna", 167, h2);
+    PersonHouse p1 = new PersonHouse("Mattias","Studerar", 32, "Man", 188, h1, car1);
+    PersonHouse p2 = new PersonHouse("Karl","Montör", 40, "Man", 178, h1, car1);
+    PersonHouse p3 = new PersonHouse("Cassandra","Studerar", 26, "Kvinna", 167, h2, car2);
 
 
     // p1.getHouse().getAddress();
@@ -21,7 +21,7 @@ public class HouseProgram{
     System.out.println(h1.getFloors());
     System.out.println(h1.getValue());
     System.out.println(p1.getHouse().getAddress());
-    System.out.println(h4.getArea());
+    System.out.println(p1.getCar().getCarBrand());
 
   }
 }
