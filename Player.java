@@ -20,7 +20,6 @@ public class Player{
 
   public void rollDice(){
     for(int i = 0; i < dices.size();i++){
-      //ska rulla alla tärningar i spelarens tärningslista.....
       dices.get(i).roll();
     }
   }
@@ -28,19 +27,16 @@ public class Player{
   public int getDieValue(){
     int sum = 0;
     for(int i = 0; i < dices.size();i++){
-      // addera tärning med tärning
-      sum = sum + dices.get(i).getValue(); // sum+= lägger till, = ersätter
+      sum = sum + dices.get(i).getValue(); //+= istället för sum = sum
     }
     return sum;
   }
 
   public void increaseScore(){
     this.score++;
-    // ökar score med 1 om en spelare vinner
   }
 
   public void addDie(int sides){
-    // Skapar ny tärning med sidor och lägger till den till spelaren.
     dices.add(new Die(sides));
   }
 }

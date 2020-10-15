@@ -13,7 +13,7 @@ public class Die{
     return this.numberOfSides;
   }
   public void roll(){
-    this.value = generateRandom.nextInt(this.numberOfSides);
+    this.value = generateRandom.nextInt(this.numberOfSides)+1;
     System.out.println(this.value);
   }
 }
