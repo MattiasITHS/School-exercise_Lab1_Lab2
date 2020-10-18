@@ -3,36 +3,44 @@ import java.util.ArrayList;
 public class SimpleDiceGame{
   public static Scanner input = new Scanner(System.in);
   public static void main(String[]args){
-    //TODO skapar en arraylist med loop som skapar anatal players
-    //fråga användare hur många spelare,
-    //hur många tärningar varje spelare ska ha
-    //och hur många sidor tärningen ska ha
-    //fråga namn på spelarna
-    // ingen felhantering, anta rätt inmatning
-    //spela 5 omgångar
-    //spelarna gissar först ett värde, sen rullar tärningar
-    //om gissning == värdet som slås = vinst
-    //spelare med flest poäng efter 5e rundan vinner
-    initialize();
-    System.out.println(playerName.get(0));
+
+    ArrayList<Player> names = initialize();
+
+    System.out.println(names);
+
 
   }
   private static ArrayList<Player> initialize(){
 
-    String playerNames;
-    ArrayList<Player> playerName = new ArrayList<Player>();
+    String name;
+    ArrayList<Player> names = new ArrayList<Player>();
+    ArrayList<Die> dice = new ArrayList<Die>();
 
     System.out.println("How many players are playing?");
     int numberOfPlayers = input.nextInt();
 
     System.out.println("How many dice should each player have?");
     int numberOfDice = input.nextInt();
+      for(int i = 0; i < dice.size();i++){
+          dice.add(new Die(6));
+        }
 
     System.out.println("Whats the name of the players?");
     for(int i = 0; i <= numberOfPlayers; i++){
-      playerNames = input.nextLine();
-      playerName.add(new Player(playerNames));
+      name = input.nextLine();
+      names.add(new Player(name));
     }
-    return (playerName);
+    return (names);
+  }
+
+  private static void takeTurn(ArrayList<Player>players){
+    ArrayList<Player> names = new ArrayList<Player>();
+
+      for(int i = 0; i < names.size(); i++){
+        System.out.println(names.get(i).getPlayerName());
+      //   for (int k = 0; k < dice.size(); k++){
+      //
+      // }
+    }
   }
 }
