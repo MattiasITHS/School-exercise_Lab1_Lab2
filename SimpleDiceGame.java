@@ -7,9 +7,8 @@ public class SimpleDiceGame{
     ArrayList<Player> players = initialize();
     for(int i = 0; i < players.size();i++){
       System.out.println("Players; " + players.get(i).getPlayerName());
+      takeTurn(players);
     }
-
-//TODO takeTurn, spelare 1, gissa värde, rulla tärning, få ett värde, stämmer gissning med värdet på tärning == vinst
   }
 
 
@@ -21,9 +20,8 @@ public class SimpleDiceGame{
 
     System.out.println("How many dice should each player have?");
     int numberOfDice = input.nextInt();
-    System.out.println("How many sides shall the dice have?");
+    System.out.println("How many sides does the dice have?");
     int numberOfSides = input.nextInt();
-
     System.out.println("Whats the name of the players?");
     for(int i = 0; i < numberOfPlayers; i++){
       players.add(new Player(input.next()));
@@ -33,12 +31,20 @@ public class SimpleDiceGame{
     }
     return players;
   }
+  //TODO printa value tot av en omgång, sum = players.get(i).getDieValue();
 
   private static void takeTurn(ArrayList<Player>players){
-      for(int i = 0; i < players.size(); i++){
-      //   for (int k = 0; k < dice.size(); k++){
-      //
-      // }
+    int score;
+    // !gå igenom listan med spelare
+    for(int i = 0; i < players.size(); i++){
+      //rulla spelarens tärning/ar
+      System.out.println("Guess your score: ");
+      score = input.nextInt();
+      players.get(i).rollDice();
+      //gissa ett värde
+      //få ett värde
+      System.out.println("The value of your roll are: " + players.get(i).getDieValue());
+
     }
   }
 }
