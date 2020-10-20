@@ -9,16 +9,21 @@ public class SimpleDiceGame{
   final static int GAME_ROUNDS = 5;
   public static Scanner input = new Scanner(System.in);
   public static void main(String[]args){
+
     ArrayList<Player> players = initialize();
-    for(int i = 0; i < 2;i++){
+
+    for(int i = 0; i < GAME_ROUNDS; i++){
       takeTurn(players);
     }
+    for (int i = 0; i < players.size(); i++){
+      System.out.println(players.get(i).getPlayerName() + " scores are " + players.get(i).getScore());
+    }    
     for(int i = 0; i < players.size();i++){
       getWinners(players);
-      System.out.println(players.get(i).getPlayerName() + " score: " + players.get(i).getScore());
     }
-
-
+    for(int i = 0; i < players.size(); i++){
+      System.out.println("The winner: " + players.get(i).getPlayerName());
+    }
   }
 
 
@@ -44,17 +49,12 @@ public class SimpleDiceGame{
 
   private static void takeTurn(ArrayList<Player>players){
     int guessScore;
-    // !gå igenom listan med spelare
     for(int i = 0; i < players.size(); i++){
-      //!rulla spelarens tärning/ar
-      //!gissa ett värde
       System.out.println("Player; " + players.get(i).getPlayerName());
       System.out.println(players.get(i).getPlayerName() + " guess your score: ");
       guessScore = input.nextInt();
       players.get(i).rollDice();
-      //!få ett värde
       System.out.println("The value of your roll are: " + players.get(i).getDieValue());
-      // öka spelarens poäng om gissning är rätt
       if(guessScore==players.get(i).getDieValue()){
         System.out.println("SCOOOOOOORE!");
         players.get(i).increaseScore();
@@ -63,25 +63,16 @@ public class SimpleDiceGame{
       }
     }
   }
-  private static ArrayList<Player> getWinners(ArrayList<Player>players){
-    //ta emot listan
-    // returnera lista med vinnare
-    ArrayList<Player> winners = new ArrayList<Player>();
-    int maxScore = -1; //Assuming it is not possible to have negative points
+  private static ArrayList<Player> getWinners(ArrayList<Player> players){
 
-    for (int i = 0; i < players.size(); i++){
+    for(int i = 0; i < players.size()-1; i++){
       int score = players.get(i).getScore();
-      if (score >= maxScore) {
-        if (score > maxScore) {
-            winners.clear();
-          }
-        maxScore = score;
-        winners.add(players.get(i));
-      }
-    // vinnare == mest poäng
-      // jämföra poäng mellan spelare i arraylistan??
-    // lista kan innehålla fler vinnare, lika många poäng
+      if(score > players.get(i+1).getScore()){
+        players.remove(players.get(i+1));
+      } else if(score < players.get(i+1).getScore()){
+        players.remove(players.get(i));
+        }
     }
-    return winners;
+    return players;
   }
 }
