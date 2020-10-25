@@ -1,9 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
+
 
 public class SimpleDiceGame{
   final static int GAME_ROUNDS = 5;
@@ -17,12 +14,16 @@ public class SimpleDiceGame{
     }
     for (int i = 0; i < players.size(); i++){
       System.out.println(players.get(i).getPlayerName() + " scores are " + players.get(i).getScore());
-    }    
+    }
     for(int i = 0; i < players.size();i++){
       getWinners(players);
     }
     for(int i = 0; i < players.size(); i++){
-      System.out.println("The winner: " + players.get(i).getPlayerName());
+      if(players.size() > 1){
+      System.out.println("The winners: " + players.get(i).getPlayerName());
+    }else if (players.size() < 2){
+      System.out.println("The winner is: " + players.get(i).getPlayerName());
+    }
     }
   }
 
@@ -35,8 +36,10 @@ public class SimpleDiceGame{
 
     System.out.println("How many dice should each player have?");
     int numberOfDice = input.nextInt();
+
     System.out.println("How many sides does the dice have?");
     int numberOfSides = input.nextInt();
+
     System.out.println("Whats the name of the players?");
     for(int i = 0; i < numberOfPlayers; i++){
       players.add(new Player(input.next()));
@@ -51,10 +54,13 @@ public class SimpleDiceGame{
     int guessScore;
     for(int i = 0; i < players.size(); i++){
       System.out.println("Player; " + players.get(i).getPlayerName());
+
       System.out.println(players.get(i).getPlayerName() + " guess your score: ");
       guessScore = input.nextInt();
+
       players.get(i).rollDice();
       System.out.println("The value of your roll are: " + players.get(i).getDieValue());
+
       if(guessScore==players.get(i).getDieValue()){
         System.out.println("SCOOOOOOORE!");
         players.get(i).increaseScore();
