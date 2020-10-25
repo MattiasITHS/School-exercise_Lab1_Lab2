@@ -5,11 +5,17 @@ public class Person{ // #skapa en klass
   public boolean hungry;
   public final String SPIECIES = "Human"; // final är konstanter som är satta och oförändliga.
 
-  public Person(String firstName,String lastName,int age){                         //konstruktor har samma namn som klassen
+  public Person(String firstName,String lastName,int age, boolean hungry){                         //konstruktor har samma namn som klassen
     this.firstName = firstName; // this - vår instans.
     this.lastName = lastName;
     this.age = age;
-    // hungry = h;
+    this.hungry = hungry;
+  }
+
+  public Person(String firstName,String lastName,int age) {
+    this.firstName = firstName; // this - vår instans.
+    this.lastName = lastName;
+    this.age = age;
   }
   // public Person(String f){
   //   this(f,"Hovde");

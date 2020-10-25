@@ -1,4 +1,6 @@
-public class FlyingVehicle extends Vehicle{
+package Vehicle;
+
+public class FlyingVehicle{
   private int weight;
   private int value;
   private int height;

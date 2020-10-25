@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class test {
+public class vincentDiamond {
  public static void main(String[] args) {
  int i,j,r;
  System.out.print("Input number of rows (half of the diamond) :");
