@@ -1,3 +1,5 @@
+package Vehicle;
+
 public class LandBaseVehicle{
   private int weight;
   private int value;
