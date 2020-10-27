@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Board{
 
-  Scanner input = new Scanner(System.in);
+  public static Scanner input = new Scanner(System.in);
 
   private char[][] board;
   public Board(int rowNum, int columnNum){
@@ -11,21 +11,27 @@ class Board{
   }
 
   public void show(){
+    // System.out.println(board.length);
     for (int i = 0; i < board.length; i++){
-      System.out.print(i + "[ ]");
+      System.out.print(i);
       for (int j = 0; j < board[i].length; j++){
-	     board[i][j] = ' ';
-       // System.out.println(board[i][j] + "");
+        // System.out.print();
+	      board[i][j] = ' ';
+        System.out.print(board[i][j] + "[ ]");
      }
-     System.out.print("[ ]" + i);
-       System.out.println();
-       //TODO få 10x10 att printa..
+      System.out.println();
     }
   }
   public void set(int i, int j){
 
   }
-  public int get(int i, int j){
-    return i+j;
+  public int get(int i, int j, char c){
+    return board[i][j];
+  }
+  public void clear(int i, int j){
+
+  }
+  public void placeBoat(int i, int j, char orient){
+    
   }
 }
