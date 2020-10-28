@@ -6,5 +6,6 @@ public class BattleShip{
 
     Board b = new Board(10,10);
     b.show();
+
   }
 }
