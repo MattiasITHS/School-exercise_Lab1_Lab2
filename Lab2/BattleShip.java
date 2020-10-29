@@ -9,9 +9,15 @@ public class BattleShip{
 
     Board b = new Board(10,10);
     b.show();
-    int i = input.nextInt();
-    int j = input.nextInt();
+    System.out.println("Place your ship commander");
+    System.out.print("Row: ");
+    int row = input.nextInt();
+    System.out.print("Column: ");
+    int col = input.nextInt();
+    System.out.print("Orientation of your ship(v for vertical, h for horizontal): ");
     char orient = input.next().charAt(0);
-    b.placeBoat(i,j,orient);
+    b.placeBoat(row,col,orient);
+    b.getBoard(row,col);
+
   }
 }

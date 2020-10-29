@@ -1,14 +1,14 @@
 package Lab2;
-
+import java.util.Arrays;
 import java.util.Scanner;
-
 class Board{
-
   public static Scanner input = new Scanner(System.in);
 
   private int col;
   private int row;
   private char[][] board;
+  private char orient;
+
   public Board(int row, int col){
     this.col = col;
     this.row = row;
@@ -34,12 +34,13 @@ class Board{
       System.out.println();
     }
   }
-  public void setBoard(int i, int j){
+  public void setBoard(int i, int j, char c){
     this.row = i;
     this.col = j;
+    this.orient = 'o';
 
   }
-  public int getBoard(int i, int j, char c){
+  public int getBoard(int i, int j){
     return board[i][j];
   }
   public void clear(int i, int j){
@@ -50,13 +51,15 @@ class Board{
     }
   }
   public void placeBoat(int i, int j, char orient){
-    i = row;
-    j = col;
-    System.out.println("Place your ship commander");
-    System.out.println("Row: ");
-
-    System.out.println("Column: ");
-    System.out.println("Orientation of your ship(v for vertical, h for horizontel): ");
+    //2 int värden som bestämmer vart båten placeras
+    //v eller h för vertikal eller horisontell placering
+    //placera en båt som tar upp platsen som angivits och platserna bredvid
+    // error om man placerar en bår där det redan finns en båt
+    for(i = 0; i < board.length; i++){
+      for(j = 0; j < board[i].length;j++){
+        board[i][j] = 'o';
+      }
+    }
 
   }
 }
