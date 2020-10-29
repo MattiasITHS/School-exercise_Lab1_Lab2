@@ -41,6 +41,22 @@ class Board{
 
   }
   public int getBoard(int i, int j){
+    for (int row = 0; row < board.length+1; row++){ // +1 för att skapa en extra rad
+      if(row == 0){
+        System.out.print(" ");
+      } else {
+        System.out.print(row-1);
+      }
+      for (int col = 0; col < board.length; col++){
+        if(row == 0){
+          System.out.print("  " + col + " ");
+        } else {
+          board[row-1][col] = ' ';
+          System.out.print(board[row-1][col] + "[ ]");
+        }
+      }
+      System.out.println();
+    }
     return board[i][j];
   }
   public void clear(int i, int j){
@@ -56,8 +72,8 @@ class Board{
     //placera en båt som tar upp platsen som angivits och platserna bredvid
     // error om man placerar en bår där det redan finns en båt
     for(i = 0; i < board.length; i++){
-      for(j = 0; j < board[i].length;j++){
-        board[i][j] = 'o';
+      for(j = 0; j < board.length;j++){
+        board[i][j] = orient;
       }
     }
 
