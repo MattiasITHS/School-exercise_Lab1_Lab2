@@ -21,5 +21,13 @@ public class BattleShip{
     b.placeBoat(row,col,orient);
     b.show();
 
+    System.out.println("Choose where to fire the canon!");
+    System.out.print("Row: ");
+    int fireRow = input.nextInt();
+    System.out.print("Column ");
+    int fireCol = input.nextInt();
+    fire(fireRow,fireCol,b);
+    b.show();
+
   }
 }
