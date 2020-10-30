@@ -9,6 +9,7 @@ public class BattleShip{
 
     Board b = new Board(10,10);
     b.show();
+
     System.out.println("Place your ship commander");
     System.out.print("Row: ");
     int row = input.nextInt();
@@ -16,8 +17,9 @@ public class BattleShip{
     int col = input.nextInt();
     System.out.print("Orientation of your ship(v for vertical, h for horizontal): ");
     char orient = input.next().charAt(0);
+
     b.placeBoat(row,col,orient);
-    b.getBoard(row,col);
+    b.show();
 
   }
 }
