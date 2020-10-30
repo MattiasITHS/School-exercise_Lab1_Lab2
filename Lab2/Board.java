@@ -51,21 +51,30 @@ class Board {
   public void placeBoat(int i, int j, char orient) {
     /*
     *2 int värden som bestämmer vart båten placeras
-    //TODO v eller h för vertikal eller horisontell placering
-    placera en båt som tar upp platsen som angivits och platserna bredvid
-
-    error om man placerar en bår där det redan finns en båt
+    *v eller h för vertikal eller horisontell placering
+    *error om man placerar en bår där det redan finns en båt
+    TODO error om man placerar båt där den inte får plats
     */
-    if (board[i][j] != ' ') {
-      System.out.println("There is a boat here already commander, choose another spot!");
-    } else if (orient.equals("V")){
-      for (int row = board[0].length; row >= 0; row--) {
+    if (board[i][j] == board.length) {
+      System.out.println("Error");
+
+
+     } else if (board[i][j] != ' ') {
+        System.out.println("There is a boat here already commander, choose another spot!");
+      } else if (orient == 'v' || orient == 'V') {
+        for (int row = board[0].length; row >= 0; row--) {
+          if (board[i][j] == ' ') {
+            board[i][j] = 'o';
+            board[i + 1][j] = 'o';
+            board[i - 1][j] = 'o';
+          }
+        }
+      } else if (orient == 'h' || orient == 'H') {
         if (board[i][j] == ' ') {
           board[i][j] = 'o';
-          board[i+1][j] = 'o';
-          board[i-1][j] = 'o';
-        }
-      }
+          board[i][j + 1] = 'o';
+          board[i][j - 1] = 'o';
+       }
     }
   }
 }
