@@ -8,6 +8,8 @@ public class BattleShip{
 
 
     Board b = new Board(10,10);
+    Board b1 = new Board(10,10);
+
     b.show();
 
     System.out.println("Place your ship commander");
@@ -20,14 +22,28 @@ public class BattleShip{
 
     b.placeBoat(row,col,orient);
     b.show();
+    turn(b);
 
     System.out.println("Choose where to fire the canon!");
     System.out.print("Row: ");
     int fireRow = input.nextInt();
     System.out.print("Column ");
     int fireCol = input.nextInt();
-    fire(fireRow,fireCol,b);
+    Canon c = new Canon();
+    c.fire(fireRow,fireCol,b);
     b.show();
+
+  }
+  public static void turn(Board target){
+    /*
+    b.show(); visa brädet som skall beskjutas.
+    fråga vart spelare ska skjuta, 2 inputs
+    mata in 2 inputs
+    använda instans av klassen canon för att skjuta Board med metod fire();
+    visa brädet
+    returnera en boolean med true == träff, false == miss.
+     */
+
 
   }
 }
