@@ -48,6 +48,7 @@ public class BattleShip{
   }
   private static Board initialize(){
 // TODO placera ut rätt antal båtar.
+      
     Board board = new Board(10,10);
     Board.placeBoat = 2;
     for(int i = 0; i < Board.placeBoat; i++){
