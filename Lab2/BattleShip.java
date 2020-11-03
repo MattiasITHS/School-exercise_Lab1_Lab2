@@ -6,9 +6,8 @@ public class BattleShip{
   public static Scanner input = new Scanner(System.in);
   public static void main (String[] args){
 
-
     Board b = new Board(10,10);
-    Board b1 = new Board(10,10);
+    // Board b1 = new Board(10,10);
 
     b.show();
 
@@ -22,7 +21,7 @@ public class BattleShip{
 
     b.placeBoat(row,col,orient);
     b.show();
-    turn(b);
+    // turn(b);
 
     System.out.println("Choose where to fire the canon!");
     System.out.print("Row: ");
@@ -34,7 +33,7 @@ public class BattleShip{
     b.show();
 
   }
-  public static void turn(Board target){
+   public static void turn(Board target){
     /*
     b.show(); visa brädet som skall beskjutas.
     fråga vart spelare ska skjuta, 2 inputs
@@ -45,5 +44,5 @@ public class BattleShip{
      */
 
 
-  }
+   }
 }

@@ -1,11 +1,11 @@
 package Lab2;
 import java.util.Scanner;
-class Board {
+public class Board {
   public static Scanner input = new Scanner(System.in);
   protected char[][] board;
 
   public Board(int row, int col) {
-    board = new char[row][col];
+    this.board = new char[row][col];
     for(int i = 0; i < board[0].length; i++) {
       for (int j = 0; j < board[1].length; j++) {
         board[i][j] = ' ';
@@ -44,22 +44,21 @@ class Board {
   }
 
   public void placeBoat(int i, int j, char orient) {
-  boolean gameOn = true;
 
   if (board[i][j] != ' ') {
     System.out.println("There is a boat here already commander.");
-  }else if (orient == 'v' || orient == 'V') {
-    if (i == 0 || i == board[0].length -1){
-      System.out.println("Commander, you can't place a boat here!");
-    } else if (board[i][j] == ' ') {
-      board[i][j] = 'o';
-      board[i + 1][j] = 'o';
-      board[i - 1][j] = 'o';
-    }
-    } else if (orient == 'h' || orient == 'H') {
-      if(j == 0 || j == board.length -1){
+  } else if (orient == 'v' || orient == 'V') {
+      if (i == 0 || i == board[0].length -1){
         System.out.println("Commander, you can't place a boat here!");
       } else if (board[i][j] == ' ') {
+          board[i][j] = 'o';
+          board[i + 1][j] = 'o';
+          board[i - 1][j] = 'o';
+      }
+    } else if (orient == 'h' || orient == 'H') {
+        if(j == 0 || j == board.length -1){
+          System.out.println("Commander, you can't place a boat here!");
+      }   else if (board[i][j] == ' ') {
         board[i][j] = 'o';
         board[i][j + 1] = 'o';
         board[i][j - 1] = 'o';
