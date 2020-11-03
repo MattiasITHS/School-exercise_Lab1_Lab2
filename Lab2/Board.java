@@ -2,7 +2,8 @@ package Lab2;
 import java.util.Scanner;
 public class Board {
   public static Scanner input = new Scanner(System.in);
-  protected char[][] board;
+  public static int placeBoat;
+  protected static char[][] board;
 
   public Board(int row, int col) {
     this.board = new char[row][col];
@@ -11,10 +12,9 @@ public class Board {
         board[i][j] = ' ';
       }
     }
-
   }
 
-  public void show() {
+  public static void show() {
 
     for(int i = 0; i < board[0].length; i++) {
       System.out.print("  " + i + "");
@@ -31,23 +31,31 @@ public class Board {
     }
   }
 
-  public void setBoard(int i, int j, char c) {
-    this.board[i][j] = c;
+  public static void setBoard(int i, int j, char c) {
+    board[i][j] = c;
   }
 
-  public char getBoard(int i, int j) {
-    return this.board[i][j];
+  public static char getBoard(int i, int j) {
+    return board[i][j];
   }
 
   public void clear(int i, int j) {
-    this.board[i][j] = '\0';
+    board[i][j] = '\0';
   }
 
+<<<<<<< HEAD
   public void placeBoat(int i, int j, char orient) {
 
   if (board[i][j] != ' ') {
     System.out.println("There is a boat here already commander.");
   } else if (orient == 'v' || orient == 'V') {
+=======
+  public static void placeBoat(int i, int j, char orient) {
+
+    if (board[i][j] != ' ') {
+      System.out.println("There is a boat here already commander.");
+    } else if (orient == 'v' || orient == 'V') {
+>>>>>>> e775856614762e1967954003cc6156ab32b83a99
       if (i == 0 || i == board[0].length -1){
         System.out.println("Commander, you can't place a boat here!");
       } else if (board[i][j] == ' ') {
@@ -60,9 +68,22 @@ public class Board {
           System.out.println("Commander, you can't place a boat here!");
       }   else if (board[i][j] == ' ') {
         board[i][j] = 'o';
-        board[i][j + 1] = 'o';
-        board[i][j - 1] = 'o';
+        board[i+1][j] = 'o';
+        board[i-1][j] = 'o';
+
       }
+    } else if (orient == 'h' || orient == 'H') {
+        if(j == 0 || j == board.length -1){
+          System.out.println("Commander, you can't place a boat here!");
+        } else if (board[i][j] == ' ') {
+          board[i][j] = 'o';
+          board[i][j + 1] = 'o';
+          board[i][j - 1] = 'o';
+        }
     }
+  }
+  public void showFog(){
+
+
   }
 }

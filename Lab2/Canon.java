@@ -4,13 +4,13 @@ public class Canon {
 
     public boolean fire(int i, int j, Board board){
 
-        if (board.getBoard(i,j) == 'o') {
+        if (Board.getBoard(i,j) == 'o') {
             System.out.println("KABOM!");
-            board.setBoard(i,i,'x');
+            Board.setBoard(i,j,'x');
 
-        } else if(board.getBoard(i,j) == ' '){
+        } else if(Board.getBoard(i,j) == ' '){
             System.out.println("Splooooosh!");
-            board.setBoard(i,j,'.');
+            Board.setBoard(i,j,'.');
             return false;
         }
         return true;
