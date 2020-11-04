@@ -4,26 +4,31 @@ import java.util.Scanner;
 
 public class BattleShip{
   public static Scanner input = new Scanner(System.in);
+    final static int rowNum = 10;
+    final static int colNum = 10;
   public static void main (String[] args){
 
+    char[][] board = new char[rowNum][colNum];
 
-    Board b = new Board(10,10);
-    Board b1 = new Board(10,10);
-    Canon c = new Canon();
+//    Board b = new Board(board);
+//    Board b1 = new Board(board);
+      char[][] b = new char[rowNum][colNum];
 
     System.out.println("Player 1 turn");
-    b = initialize();
+    char b = initialize();
     System.out.println("Player 2 turn.");
-    b1 = initialize();
+    Board b1;
 
-    do{
-        System.out.println("Player 1's turn");
-        turn(b1);
-    }while(!turn(b1));
-//    do{
-//        System.out.println("Player 2's turn");
+//    if(checkWinner(b)){
+//        System.out.println("Congrats! you've won the battle!");
+//    } else if(!checkWinner(b)){
 //        turn(b1);
-//    }while(!turn(b));
+//    }
+
+    System.out.println("Player 1's turn");
+    turn(b2);
+    System.out.println("Player 2's turn");
+    turn(b1);
 
 
 
@@ -48,10 +53,9 @@ public class BattleShip{
   }
   private static Board initialize(){
 // TODO placera ut rätt antal båtar.
-      
-    Board board = new Board(10,10);
-    Board.placeBoat = 2;
-    for(int i = 0; i < Board.placeBoat; i++){
+    int placebo = 1;
+    Board board = new Board(rowNum,colNum);
+    while(placebo <= 1){
         Board.show();
         System.out.println("Commander! place 4 ships");
         System.out.print("Row: ");
@@ -61,15 +65,23 @@ public class BattleShip{
         System.out.print("Orientation of your ship(v for vertical, h for horizontal): ");
         char orient = input.next().charAt(0);
         Board.placeBoat(row, col, orient);
+        if(Board.getBoard(row,col) == ' ') {
+            System.out.println("Try again!");
+        }
+        if (Board.getBoard(row,col) == 'o') {
+            placebo++;
+        }
     }
     Board.show();
     return board;
   }
   private static boolean checkWinner(Board board){
+
       /*
       tar emot ett bräde och undersöker om alla skepp har sänkts
       returnera true om alla skepp har sänkts, annars false.
        */
-      return Board.placeBoat == 0;
+      return Board.getBoard(rowNum, colNum) == 0;
+
   }
 }
