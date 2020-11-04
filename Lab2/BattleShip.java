@@ -8,26 +8,23 @@ public class BattleShip{
     final static int colNum = 10;
   public static void main (String[] args){
 
-<<<<<<< HEAD
+
     char[][] board = new char[rowNum][colNum];
 
-//    Board b = new Board(board);
-//    Board b1 = new Board(board);
-      char[][] b = new char[rowNum][colNum];
-=======
-    Board b = new Board(10,10);
-<<<<<<< HEAD
-    // Board b1 = new Board(10,10);
-=======
-    Board b1 = new Board(10,10);
-    Canon c = new Canon();
->>>>>>> e775856614762e1967954003cc6156ab32b83a99
->>>>>>> c33e1aa12af84b292ccba695341120251ca12574
+    Board b = new Board(board);
+    Board b1 = new Board(board);
+      char[][] b3 = new char[rowNum][colNum];
+
+//    Board b = new Board(10,10);
+//    Board b1 = new Board(10,10);
+
+
+
 
     System.out.println("Player 1 turn");
-    char b = initialize();
+    b = initialize();
     System.out.println("Player 2 turn.");
-    Board b1;
+
 
 //    if(checkWinner(b)){
 //        System.out.println("Congrats! you've won the battle!");
@@ -36,17 +33,14 @@ public class BattleShip{
 //    }
 
     System.out.println("Player 1's turn");
-    turn(b2);
-    System.out.println("Player 2's turn");
     turn(b1);
+    System.out.println("Player 2's turn");
+    turn(b);
 
 
-<<<<<<< HEAD
-    b.placeBoat(row,col,orient);
-    b.show();
-    // turn(b);
-=======
->>>>>>> e775856614762e1967954003cc6156ab32b83a99
+
+
+
 
   }
   public static boolean turn(Board target){
@@ -67,20 +61,7 @@ public class BattleShip{
         return true;
     }
   }
-<<<<<<< HEAD
-   public static void turn(Board target){
-    /*
-    b.show(); visa brädet som skall beskjutas.
-    fråga vart spelare ska skjuta, 2 inputs
-    mata in 2 inputs
-    använda instans av klassen canon för att skjuta Board med metod fire();
-    visa brädet
-    returnera en boolean med true == träff, false == miss.
-     */
 
-
-   }
-=======
   private static Board initialize(){
 // TODO placera ut rätt antal båtar.
     int placebo = 1;
@@ -114,5 +95,5 @@ public class BattleShip{
       return Board.getBoard(rowNum, colNum) == 0;
 
   }
->>>>>>> e775856614762e1967954003cc6156ab32b83a99
+
 }
