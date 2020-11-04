@@ -1,6 +1,6 @@
 package Lab2;
 
-class Canon {
+public class Canon {
 
     public boolean fire(int i, int j, Board board){
 

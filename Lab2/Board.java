@@ -6,8 +6,13 @@ public class Board {
   private static char[][] board;
 
   public Board(int row, int col) {
+<<<<<<< HEAD
     board = new char[row][col];
     for (int i = 0; i < board[0].length; i++) {
+=======
+    this.board = new char[row][col];
+    for(int i = 0; i < board[0].length; i++) {
+>>>>>>> c33e1aa12af84b292ccba695341120251ca12574
       for (int j = 0; j < board[1].length; j++) {
         board[i][j] = ' ';
       }
@@ -46,14 +51,37 @@ public class Board {
     board[i][j] = '\0';
   }
 
+<<<<<<< HEAD
+  public void placeBoat(int i, int j, char orient) {
+
+  if (board[i][j] != ' ') {
+    System.out.println("There is a boat here already commander.");
+  } else if (orient == 'v' || orient == 'V') {
+=======
   public static void placeBoat(int i, int j, char orient) {
 
     if (board[i][j] != ' ') {
       System.out.println("There is a boat here already commander.");
+<<<<<<< HEAD
     } else if (i == 0 || i == board[0].length - 1 || j == 0 || j == board.length - 1) {
         System.out.println("Commander, you can't place a boat here!");
     } else if (orient == 'v' || orient == 'V') {
       if (board[i][j] == ' ') {
+=======
+    } else if (orient == 'v' || orient == 'V') {
+>>>>>>> e775856614762e1967954003cc6156ab32b83a99
+      if (i == 0 || i == board[0].length -1){
+        System.out.println("Commander, you can't place a boat here!");
+      } else if (board[i][j] == ' ') {
+          board[i][j] = 'o';
+          board[i + 1][j] = 'o';
+          board[i - 1][j] = 'o';
+      }
+    } else if (orient == 'h' || orient == 'H') {
+        if(j == 0 || j == board.length -1){
+          System.out.println("Commander, you can't place a boat here!");
+      }   else if (board[i][j] == ' ') {
+>>>>>>> c33e1aa12af84b292ccba695341120251ca12574
         board[i][j] = 'o';
         board[i + 1][j] = 'o';
         board[i - 1][j] = 'o';
