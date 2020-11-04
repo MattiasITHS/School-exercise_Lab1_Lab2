@@ -76,10 +76,10 @@ public class BattleShip{
         System.out.print("Orientation of your ship(v for vertical, h for horizontal): ");
         char orient = input.next().charAt(0);
         Board.placeBoat(row, col, orient);
-        if(Board.getBoard(row,col) == ' ') {
+        if(board.getBoard(row,col) == ' ') {
             System.out.println("Try again!");
         }
-        if (Board.getBoard(row,col) == 'o') {
+        if (board.getBoard(row,col) == 'o') {
             placebo++;
         }
     }
@@ -92,7 +92,7 @@ public class BattleShip{
       tar emot ett bräde och undersöker om alla skepp har sänkts
       returnera true om alla skepp har sänkts, annars false.
        */
-      return Board.getBoard(rowNum, colNum) == 0;
+      return board.getBoard(rowNum, colNum) == 0;
 
   }
 

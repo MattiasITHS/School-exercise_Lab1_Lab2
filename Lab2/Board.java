@@ -35,11 +35,11 @@ public class Board {
     }
   }
 
-  public static void setBoard(int i, int j, char c) {
+  public void setBoard(int i, int j, char c) {
     board[i][j] = c;
   }
 
-  public static char getBoard(int i, int j) {
+  public char getBoard(int i, int j) {
     return board[i][j];
   }
 
