@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Board {
   public static Scanner input = new Scanner(System.in);
 
-  private static char[][] board;
+  private char[][] board;
 
   public Board(int row, int col) {
     board = new char[row][col];
@@ -14,12 +14,7 @@ public class Board {
     }
   }
 
-  public Board(char[][] board) {
-    Board.board = board;
-  }
-
-  public static void show() {
-
+  public void show() {
     for (int i = 0; i < board[0].length; i++) {
       System.out.print("  " + i + "");
     }
@@ -48,8 +43,7 @@ public class Board {
   }
 
 
-  public static void placeBoat(int i, int j, char orient) {
-
+  public void placeBoat(int i, int j, char orient) {
     if (board[i][j] != ' ') {
       System.out.println("There is a boat here already commander.");
     } else if (i == 0 || i == board[0].length - 1 || j == 0 || j == board.length - 1) {

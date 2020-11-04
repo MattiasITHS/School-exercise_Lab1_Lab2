@@ -4,28 +4,25 @@ import java.util.Scanner;
 
 public class BattleShip{
   public static Scanner input = new Scanner(System.in);
-    final static int rowNum = 10;
-    final static int colNum = 10;
+  final static int rowNum = 10;
+  final static int colNum = 10;
   public static void main (String[] args){
 
 
-    char[][] board = new char[rowNum][colNum];
-
-    Board b = new Board(board);
-    Board b1 = new Board(board);
-      char[][] b3 = new char[rowNum][colNum];
-
-//    Board b = new Board(10,10);
-//    Board b1 = new Board(10,10);
-
+//    Board [][]board = new Board[rowNum][colNum];
+//    Board [][]board1 = new Board[rowNum][colNum];
+    Board b = new Board(rowNum,colNum);
+    Board b1 = new Board(rowNum,colNum);
 
 
 
     System.out.println("Player 1 turn");
     b = initialize();
-    System.out.println("Player 2 turn.");
+      System.out.println("Player 2 turn.");
+    b1 = initialize();
 
-
+    b.show();
+    b1.show();
 //    if(checkWinner(b)){
 //        System.out.println("Congrats! you've won the battle!");
 //    } else if(!checkWinner(b)){
@@ -37,16 +34,11 @@ public class BattleShip{
     System.out.println("Player 2's turn");
     turn(b);
 
-
-
-
-
-
   }
   public static boolean turn(Board target){
 
     Canon c = new Canon();
-    Board.show();
+    target.show();
     System.out.println("Choose where to fire the canon!");
     System.out.print("Row: ");
     int fireRow = input.nextInt();
@@ -54,7 +46,7 @@ public class BattleShip{
     int fireCol = input.nextInt();
 
     c.fire(fireRow,fireCol,target);
-    Board.show();
+    target.show();
     if(!c.fire(fireRow, fireCol, target)){
         return false;
     } else {
@@ -63,11 +55,10 @@ public class BattleShip{
   }
 
   private static Board initialize(){
-// TODO placera ut rätt antal båtar.
     int placebo = 1;
     Board board = new Board(rowNum,colNum);
-    while(placebo <= 1){
-        Board.show();
+    while(placebo <= 2){
+        board.show();
         System.out.println("Commander! place 4 ships");
         System.out.print("Row: ");
         int row = input.nextInt();
@@ -75,7 +66,11 @@ public class BattleShip{
         int col = input.nextInt();
         System.out.print("Orientation of your ship(v for vertical, h for horizontal): ");
         char orient = input.next().charAt(0);
+<<<<<<< HEAD
         Board.placeBoat(row, col, orient);
+=======
+        board.placeBoat(row, col, orient);
+>>>>>>> fa29af5a24ee1b32c6cc6ce8604d61f2dbbc6a91
         if(board.getBoard(row,col) == ' ') {
             System.out.println("Try again!");
         }
@@ -83,7 +78,7 @@ public class BattleShip{
             placebo++;
         }
     }
-    Board.show();
+    board.show();
     return board;
   }
   private static boolean checkWinner(Board board){
