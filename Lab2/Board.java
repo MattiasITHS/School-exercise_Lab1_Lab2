@@ -4,7 +4,7 @@ public class Board {
   public static Scanner input = new Scanner(System.in);
 
   private char[][] board;
-  private int placebo = 1;
+  private int placeboat = 1;
 
   public Board(int row, int col) {
     board = new char[row][col];
@@ -45,6 +45,9 @@ public class Board {
 
 
   public void placeBoat(int i, int j, char orient) {
+//    if(i < 0 || i > 10 ){
+//      System.out.println("Out of the board sir! try again!");
+//    }
     if (board[i][j] != ' ') {
       System.out.println("There is a boat here already commander.");
     } else if (i == 0 || i == board[0].length - 1 || j == 0 || j == board[0].length - 1) {
@@ -54,21 +57,21 @@ public class Board {
       board[i][j] = 'o';
       board[i + 1][j] = 'o';
       board[i - 1][j] = 'o';
-      placebo++;
+      placeboat++;
     }
     } else if(orient =='h'||orient =='H'){
       if (board[i][j] == ' ') {
       board[i][j] = 'o';
       board[i][j+1] = 'o';
       board[i][j-1] = 'o';
-      placebo++;
+      placeboat++;
       }
     } else {
       System.out.println("Error! Type a V or H");
     }
   }
   public void showFog(){
-    for (int i = 0; i < board[0].length; i++) {
+        for (int i = 0; i < board[0].length; i++) {
       System.out.print("  " + i + "");
     }
     System.out.println();
@@ -76,18 +79,21 @@ public class Board {
       System.out.print(row);
       for (int col = 0; col < board[1].length; col++) {
         System.out.print("[");
-        System.out.print(" ");
-        System.out.print("]");
-        // TODO mata in 'x' när båt har blivit träffat
+        if(board[row][col] == 'x'){
+          System.out.print('x');
+        } else {
+          System.out.print(" ");
+          System.out.print("]");
+        }
       }
       System.out.println();
     }
   }
-  public int getPlacebo() {
-    return placebo;
+  public int getPlaceboat() {
+    return placeboat;
   }
-  public void setPlacebo(int placebo) {
-    this.placebo = placebo;
+  public void setPlaceboat(int placeboat) {
+    this.placeboat = placeboat;
   }
 }
 
