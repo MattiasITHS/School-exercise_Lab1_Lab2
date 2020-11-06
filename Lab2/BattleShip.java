@@ -4,24 +4,44 @@ import java.util.Scanner;
 
 public class BattleShip {
     public static Scanner input = new Scanner(System.in);
-    final static int rowNum = 10;
+    final static int rowNum = 10; // gameboard setter.
     final static int colNum = 10;
 
     public static void main(String[] args) {
 
-        Board b = new Board(rowNum, colNum);
-        Board b1 = new Board(rowNum, colNum);
+        Board b;
+        Board b1;
 
         System.out.println("Player 1 turn");
         b = initialize();
         System.out.println("Player 2 turn.");
         b1 = initialize();
 
-        System.out.println("Player 1's turn");
-        do{
-            turn(b1);
+        boolean winner = false;
+        boolean next = true;
+        while(!winner) {
+            if (next) {
+                System.out.println("Player 1 turn");
+                if (turn(b1)) {
+                    if (checkWinner(b1)) {
+                    winner = !winner;
+                }
+            } else {
+                next = !next;
+            }
+        } else {
+                System.out.println("Player 2 turn");
+                if(turn(b)){
+                    if(checkWinner(b)) {
+                        winner = !winner;
+                    }
+                } else {
+                    next = !next;
+                }
+            }
+        }
+        System.out.println("Game over");
 
-        }while(turn(b1));
 
     }
 
@@ -36,16 +56,18 @@ public class BattleShip {
         System.out.print("Column ");
         int fireCol = input.nextInt();
 
-        c.fire(fireRow, fireCol, target);
+        boolean hit = c.fire(fireRow, fireCol, target);
         target.showFog();
-        return c.fire(fireRow, fireCol, target);
+        return hit;
     }
 
     private static Board initialize() {
+
         Board board = new Board(rowNum, colNum);
+
         while (board.getPlaceboat() <= 1) {
             board.show();
-            System.out.println("Commander! place 4 ships");
+            System.out.println("Commander! place your ships");
             System.out.print("Row: ");
             int row = input.nextInt();
             System.out.print("Column: ");
@@ -55,24 +77,19 @@ public class BattleShip {
 
             board.placeBoat(row, col, orient);
 
-            if (board.getBoard(row, col) == ' ') {
-                System.out.println("Try again!");
-            }
         }
         board.show();
         return board;
     }
 
     private static boolean checkWinner(Board board) {
-        int sunkShip = 0;
-        for (int i = 0; i < board.getBoard(i,0); i++) {
-            for(int j = 0; j < board.getBoard(i,j); i++){
-                if (board.getBoard(i,j) == 'x') {
-                    sunkShip++;
-                }
-            }
-        }
-        return sunkShip == 3;
+        /*
+        tar emot ett Board-objekt
+        om alla skepp har sänkts returneras true annars false.
+         */
+        
+        int hits = 0;
+    return false;
     }
 }
 

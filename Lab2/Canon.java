@@ -10,9 +10,16 @@ public class Canon {
             return true;
         } else if(board.getBoard(i,j) == ' '){
         System.out.println("Splooooosh!");
+            checkNear(i,j,board);
         board.setBoard(i,j,'.');
         }
         return false;
+    }
+    private boolean checkNear(int i, int j, Board board){
+        if(board.getBoard(i,j) == ' '){
+
+        }
+       return false;
     }
 }
 
