@@ -27,7 +27,9 @@ public class BattleShip {
                     if (checkWinner(b1)) {
                         System.out.println("Congratz. Player 1 won the battle!");
                     winner = !winner;
-                }
+                } else {
+                        System.out.println("Fire again Commander!");
+                    }
             } else {
                 next = !next;
             }
@@ -37,6 +39,8 @@ public class BattleShip {
                     if(checkWinner(b)) {
                         System.out.println("Congratz. Player 2 won the battle!");
                         winner = !winner;
+                    } else {
+                        System.out.println("Fire again Commander!");
                     }
                 } else {
                     next = !next;
@@ -58,12 +62,14 @@ public class BattleShip {
         int fireCol = input.nextInt();
 
         boolean hit = c.fire(fireRow, fireCol, target);
+
         target.showFog();
         return hit;
     }
 
     private static Board initialize() {
         Board board = new Board(ROW_NUM, COL_NUM);
+        // TODO byt 1 till NR_OF_BOATS
         while (board.getPlaceboat() <= 1) {
             board.show();
             System.out.println("Commander! place ship: " + board.getPlaceboat());
@@ -93,6 +99,7 @@ public class BattleShip {
                 }
             }
         }
-    return sunkShip == 6;
+        // 3 byts till 12 eller skapa en variabel för 12.
+    return sunkShip == 3;
     }
 }
