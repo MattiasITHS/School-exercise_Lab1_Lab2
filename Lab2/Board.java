@@ -1,9 +1,10 @@
 package Lab2;
+
 import java.util.Scanner;
 public class Board {
   public static Scanner input = new Scanner(System.in);
 
-  private char[][] board;
+  private final char[][] board;
   private int placeboat = 1;
 
   public Board(int row, int col) {
@@ -43,17 +44,15 @@ public class Board {
     board[i][j] = '\0';
   }
 
-
   public void placeBoat(int i, int j, char orient) {
-    if(i < 0 || i > 11 || j < 0 || j > 11 ){
+    if(i < 0 || i > board[0].length+1 || j < 0 || j > board[0].length+1 ){
       System.out.println("Out of the board sir! try again!");
     } else if (board[i][j] != ' ') {
       System.out.println("There is a boat here already commander. Try again!");
-    } else if (i == 0 || i == board[0].length - 1 || j == 0 || j == board[0].length - 1) {
-      System.out.println("Commander, you can't place a boat here! Try again!");
     } else if (orient == 'v' || orient == 'V') {
-     if (board[i][j] == ' ' && board[i+1][j] == ' ' && board[i-1][j] == ' ') {
-
+      if(i == 0 || i == board[0].length -1) {
+       System.out.println("Commander, you can't place a boat here! Try again!");
+     } else if (board[i][j] == ' ' && board[i+1][j] == ' ' && board[i-1][j] == ' ') {
       board[i][j] = 'o';
       board[i + 1][j] = 'o';
       board[i - 1][j] = 'o';
@@ -61,8 +60,10 @@ public class Board {
     } else {
        System.out.println("Commander, you can't place a boat here! Try again!");
      }
-    } else if(orient =='h'||orient =='H'){
-      if (board[i][j] == ' ' && board[i][j+1] == ' ' && board[i][j-1] == ' ') {
+    } else if(orient =='h'||orient =='H') {
+       if(j == 0 || j == board.length -1) {
+         System.out.println("Commander, you can't place a boat here! Try again!");
+       } else if (board[i][j] == ' ' && board[i][j+1] == ' ' && board[i][j-1] == ' ') {
       board[i][j] = 'o';
       board[i][j+1] = 'o';
       board[i][j-1] = 'o';
@@ -74,6 +75,7 @@ public class Board {
       System.out.println("Error! Type a V or H");
     }
   }
+
   public void showFog(){
     for (int i = 0; i < board[0].length; i++) {
       System.out.print("  " + i + "");
