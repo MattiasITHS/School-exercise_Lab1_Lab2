@@ -1,13 +1,14 @@
 package Lab2;
 
 public class Canon {
-
     public boolean fire(int i, int j, Board board){
-        if(board.getBoard(i,j) == 'x') {
-            System.out.println("You already set that spot on fire! fire again!");
+        if (i > BattleShip.ROW_NUM || j > BattleShip.COL_NUM){
+            System.out.println("You fired out of the board!");
+            return false;
+        } else if (board.getBoard(i,j) == 'x') {
+            System.out.println("You already set that spot on fire! fire again! Try again!");
             return true;
-        }
-        if (board.getBoard(i,j) == 'o') {
+        } else if (board.getBoard(i,j) == 'o') {
             System.out.println("KABOM!");
             board.setBoard(i,j,'x');
             return true;
@@ -15,7 +16,6 @@ public class Canon {
         System.out.println("Splooooosh!");
             if (checkNear(i,j,board)){
                 System.out.println("But it was a close one!");
-                //TODO skott utanför board print You fired outside the board
             }
         board.setBoard(i,j,'.');
         }
