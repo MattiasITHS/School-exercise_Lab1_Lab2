@@ -69,7 +69,6 @@ public class BattleShip {
 
     private static Board initialize() {
         Board board = new Board(ROW_NUM, COL_NUM);
-        // TODO byt 1 till NR_OF_BOATS
         while (board.getPlaceboat() <= 1) {
             board.show();
             System.out.println("Commander! place ship: " + board.getPlaceboat());
@@ -91,15 +90,15 @@ public class BattleShip {
 
     private static boolean checkWinner(Board board) {
 
-        int sunkShip = 0;
+         int nrOfHits = 0;
         for(int i = 0; i < ROW_NUM; i++){
             for(int j = 0; j < COL_NUM; j++){
                 if (board.getBoard(i,j) == 'x'){
-                    sunkShip = sunkShip +1;
+                    nrOfHits = nrOfHits +1;
                 }
             }
         }
         // 3 byts till 12 eller skapa en variabel för 12.
-    return sunkShip == 3;
+    return nrOfHits == 12;
     }
 }

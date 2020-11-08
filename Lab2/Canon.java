@@ -18,17 +18,30 @@ public class Canon {
                 System.out.println("But it was a close one!");
             }
         board.setBoard(i,j,'.');
+        } else if (board.getBoard(i,j) == '.'){
+            System.out.println("You've already tried to fire at this spot commander! Try again!");
+                    return true;
         }
         return false;
     }
     private boolean checkNear(int i, int j, Board board){
-// TODO skott på j-1 och i-1 och i+1 och j +1 ska printa but it was a close one.
-        if(board.getBoard(i+1,j) == 'o' || board.getBoard(i,j) == 'o'){
+
+        int ifNear = i + 1;
+        if(ifNear < 0 && board.getBoard(ifNear,j) == 'o'){
             return true;
-        } else if (board.getBoard(i,j+1) == 'o' || board.getBoard(i,j) == 'o') {
-            return true;
-        } else {
-            return false;
         }
+        ifNear = i - 1;
+        if (ifNear > BattleShip.ROW_NUM-1 && board.getBoard(ifNear,j) == 'o') {
+            return true;
+        }
+        ifNear = j + 1;
+        if(ifNear < 0 && board.getBoard(i,ifNear) == 'o') {
+            return true;
+        }
+        ifNear = j - 1;
+        if(ifNear > BattleShip.COL_NUM-1 && board.getBoard(i,ifNear) == 'o'){
+
+        }
+        return true;
     }
 }
