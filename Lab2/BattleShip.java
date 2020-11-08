@@ -69,7 +69,7 @@ public class BattleShip {
 
     private static Board initialize() {
         Board board = new Board(ROW_NUM, COL_NUM);
-        while (board.getPlaceboat() <= 1) {
+        while (board.getPlaceboat() <= NR_OF_BOATS) {
             board.show();
             System.out.println("Commander! place ship: " + board.getPlaceboat());
             System.out.print("Row: ");

@@ -6,7 +6,7 @@ public class Canon {
             System.out.println("You fired out of the board!");
             return false;
         } else if (board.getBoard(i,j) == 'x') {
-            System.out.println("You already set that spot on fire! fire again! Try again!");
+            System.out.println("You already set that spot on fire! fire again!!");
             return true;
         } else if (board.getBoard(i,j) == 'o') {
             System.out.println("KABOM!");
@@ -27,21 +27,21 @@ public class Canon {
     private boolean checkNear(int i, int j, Board board){
 
         int ifNear = i + 1;
-        if(ifNear < 0 && board.getBoard(ifNear,j) == 'o'){
+        if(ifNear <= BattleShip.ROW_NUM-1 && board.getBoard(ifNear,j) == 'o'){
             return true;
         }
         ifNear = i - 1;
-        if (ifNear > BattleShip.ROW_NUM-1 && board.getBoard(ifNear,j) == 'o') {
+        if (ifNear >= 0 && board.getBoard(ifNear,j) == 'o') {
             return true;
         }
         ifNear = j + 1;
-        if(ifNear < 0 && board.getBoard(i,ifNear) == 'o') {
+        if(ifNear <= BattleShip.COL_NUM-1 && board.getBoard(i,ifNear) == 'o') {
             return true;
         }
         ifNear = j - 1;
-        if(ifNear > BattleShip.COL_NUM-1 && board.getBoard(i,ifNear) == 'o'){
-
-        }
+        if(ifNear >= 0 && board.getBoard(i,ifNear) == 'o'){
         return true;
+        }
+        return false;
     }
 }
