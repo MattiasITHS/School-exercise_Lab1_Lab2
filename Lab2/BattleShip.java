@@ -19,7 +19,7 @@ public class BattleShip {
         b1 = initialize();
 
         boolean winner = false;
-        boolean next = true; //next == player1. !next == player2
+        boolean next = true;
         while(!winner) {
             if (next) {
                 System.out.println("Player 1 turn");
@@ -90,7 +90,7 @@ public class BattleShip {
 
     private static boolean checkWinner(Board board) {
 
-         int nrOfHits = 0;
+        int nrOfHits = 0;
         for(int i = 0; i < ROW_NUM; i++){
             for(int j = 0; j < COL_NUM; j++){
                 if (board.getBoard(i,j) == 'x'){
@@ -98,7 +98,6 @@ public class BattleShip {
                 }
             }
         }
-        // 3 byts till 12 eller skapa en variabel för 12.
     return nrOfHits == 12;
     }
 }
