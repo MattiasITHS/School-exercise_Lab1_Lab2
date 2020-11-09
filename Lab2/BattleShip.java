@@ -1,5 +1,3 @@
-package Lab2;
-
 import java.util.Scanner;
 
 public class BattleShip {
@@ -19,7 +17,7 @@ public class BattleShip {
         b1 = initialize();
 
         boolean winner = false;
-        boolean next = true; //next == player1. !next == player2
+        boolean next = true;
         while(!winner) {
             if (next) {
                 System.out.println("Player 1 turn");
@@ -64,7 +62,7 @@ public class BattleShip {
 
     private static Board initialize() {
         Board board = new Board(ROW_NUM, COL_NUM);
-        while (board.getPlaceboat() <= 1) {
+        while (board.getPlaceboat() <= NR_OF_BOATS) {
             board.show();
             System.out.println("Commander! place ship: " + board.getPlaceboat());
             System.out.print("Row: ");
@@ -93,6 +91,6 @@ public class BattleShip {
                 }
             }
         }
-    return sunkShip == 6;
+    return sunkShip == 12;
     }
 }
