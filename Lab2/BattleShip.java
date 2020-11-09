@@ -25,7 +25,9 @@ public class BattleShip {
                     if (checkWinner(b1)) {
                         System.out.println("Congratz. Player 1 won the battle!");
                     winner = !winner;
-                }
+                } else {
+                        System.out.println("Fire again Commander!");
+                    }
             } else {
                 next = !next;
             }
@@ -35,6 +37,8 @@ public class BattleShip {
                     if(checkWinner(b)) {
                         System.out.println("Congratz. Player 2 won the battle!");
                         winner = !winner;
+                    } else {
+                        System.out.println("Fire again Commander!");
                     }
                 } else {
                     next = !next;
@@ -56,6 +60,7 @@ public class BattleShip {
         int fireCol = input.nextInt();
 
         boolean hit = c.fire(fireRow, fireCol, target);
+
         target.showFog();
         return hit;
     }
@@ -83,14 +88,14 @@ public class BattleShip {
 
     private static boolean checkWinner(Board board) {
 
-        int sunkShip = 0;
+        int nrOfHits = 0;
         for(int i = 0; i < ROW_NUM; i++){
             for(int j = 0; j < COL_NUM; j++){
                 if (board.getBoard(i,j) == 'x'){
-                    sunkShip = sunkShip +1;
+                    nrOfHits = nrOfHits +1;
                 }
             }
         }
-    return sunkShip == 12;
+    return nrOfHits == 12;
     }
 }
