@@ -106,34 +106,3 @@ public class Board {
     this.placeboat = placeboat;
   }
 }
-
-//    if(i < 0 || i > board[0].length+1 || j < 0 || j > board[0].length+1 ){
-//        System.out.println("Out of the board sir! try again!");
-//        } else if (board[i][j] != ' ') {
-//        System.out.println("There is a boat here already commander. Try again!");
-//        } else if (orient == 'v' || orient == 'V') {
-//        if(i == 0 || i == board[0].length -1) {
-//        System.out.println("Commander, you can't place a boat here! Try again!");
-//        } else if (board[i][j] == ' ' && board[i+1][j] == ' ' && board[i-1][j] == ' ') {
-//        board[i][j] = 'o';
-//        board[i + 1][j] = 'o';
-//        board[i - 1][j] = 'o';
-//        placeboat++;
-//        } else {
-//        System.out.println("Commander, you can't place a boat here! Try again!");
-//        }
-//        } else if(orient =='h'||orient =='H') {
-//        if(j == 0 || j == board.length -1) {
-//        System.out.println("Commander, you can't place a boat here! Try again!");
-//        } else if (board[i][j] == ' ' && board[i][j+1] == ' ' && board[i][j-1] == ' ') {
-//        board[i][j] = 'o';
-//        board[i][j+1] = 'o';
-//        board[i][j-1] = 'o';
-//        placeboat++;
-//        } else {
-//        System.out.println("Commander, you can't place a boat here! Try again!");
-//        }
-//        } else {
-//        System.out.println("Error! Type a V or H");
-//        }
-//        }
