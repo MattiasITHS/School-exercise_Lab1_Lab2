@@ -1,3 +1,5 @@
+package Lab2;
+
 import java.util.Scanner;
 
 public class BattleShip {
