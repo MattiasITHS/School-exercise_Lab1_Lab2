@@ -1,8 +1,11 @@
 package Lab2;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 93cdc12171de665c2bfa532298358a8df06148fa
 public class Canon {
     public boolean fire(int i, int j, Board board){
-        if (i > BattleShip.ROW_NUM || j > BattleShip.COL_NUM){
+        if (i >= BattleShip.ROW_NUM || j >= BattleShip.COL_NUM){
             System.out.println("You fired out of the board!");
             return false;
         } else if (board.getBoard(i,j) == 'x') {
