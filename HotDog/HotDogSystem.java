@@ -1,3 +1,5 @@
+package HotDog;
+
 public class HotDogSystem{
   public static void main(String[]args){
     Person p1 = new Person("Mattias","Hovde",31,true);

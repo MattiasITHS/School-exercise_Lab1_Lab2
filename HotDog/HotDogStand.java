@@ -1,3 +1,5 @@
+package HotDog;
+
 public class HotDogStand{ // #skapa en klass
   public int hotDogsLeft; // #skapa variabel, mängd korv kvar
 

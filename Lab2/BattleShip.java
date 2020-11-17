@@ -1,3 +1,5 @@
+package Lab2;
+
 import java.util.Scanner;
 
 public class BattleShip {
@@ -8,7 +10,7 @@ public class BattleShip {
 
     public static void main(String[] args) {
 
-        Board b = new Board(ROW_NUM, COL_NUM);
+        Board b = new Board(ROW_NUM, COL_NUM); //instantiating
         Board b1 = new Board(ROW_NUM, COL_NUM);
 
         System.out.println("Player 1 turn");

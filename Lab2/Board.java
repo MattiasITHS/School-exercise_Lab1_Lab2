@@ -1,3 +1,5 @@
+package Lab2;
+
 import java.util.Scanner;
 public class Board {
   public static Scanner input = new Scanner(System.in);

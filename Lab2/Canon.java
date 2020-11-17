@@ -1,3 +1,5 @@
+package Lab2;
+
 public class Canon {
     public boolean fire(int i, int j, Board board){
         if (i > BattleShip.ROW_NUM || j > BattleShip.COL_NUM){

@@ -1,3 +1,5 @@
+package HotDog;
+
 public class Person{ // #skapa en klass
   public String firstName; // #skapa personens variabler
   public String lastName;
