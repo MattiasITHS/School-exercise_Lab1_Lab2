@@ -1,3 +1,5 @@
+package House;
+
 public class House{
   // huset ska ha antal våningar, yta, värde, address och byggnadsår.
   private int floors;

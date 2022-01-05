@@ -1,4 +1,6 @@
-public class Rat implements Mortal{
+package Interface;
+
+public class Rat implements Mortals{
   private int health = 1;
 
   public int getHealth() {

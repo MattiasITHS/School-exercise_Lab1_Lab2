@@ -1,6 +1,7 @@
 package Vehicle;
 
 public class Person {
+  private String lastName;
   private String name;
   private int age;
   private String job;
@@ -12,6 +13,14 @@ public class Person {
     this.job = job;
     this.bankMoney = bankMoney;
   }
+
+  public Person(String name, String lastName, int age) {
+    this.name = name;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+
   public String getName(){
     return name;
   }

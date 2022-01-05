@@ -1,4 +1,8 @@
-public class Dragon implements Monster, Mortal {
+package Interface;
+
+import Interface.Mortal;
+
+public class Dragon implements Monster, Mortals {
   private int health = 100;
    public void attack() {
     System.out.println("The dragon unleashes a ferocious roar");

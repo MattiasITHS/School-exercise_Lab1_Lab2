@@ -1,3 +1,5 @@
+package Interface;
+
 public class Human implements Creature, Walking, Aquatic {
   boolean climbing = false;
   boolean submerged = false;

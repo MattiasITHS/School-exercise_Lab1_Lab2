@@ -1,6 +1,8 @@
+package Rep;
+
 import java.util.*;
 
-public class RepMain {
+class RepMain {
   public static void main(String[]args) {
     int[] array1 = new int[5];
     String[] array2 = {"Vince","Jeff","Greta","Dennis"};

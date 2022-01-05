@@ -1,3 +1,5 @@
+package Interface;
+
 public class Flyfish implements Creature, Flying, Aquatic {
   boolean submerged = false;
   boolean flying = false;

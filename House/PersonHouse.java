@@ -1,3 +1,5 @@
+package House;
+
 public class PersonHouse{
   private String name;
   private String job;

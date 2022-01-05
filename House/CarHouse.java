@@ -1,3 +1,5 @@
+package House;
+
 public class CarHouse{
   private String brand;
   private int value;

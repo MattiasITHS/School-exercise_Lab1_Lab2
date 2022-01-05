@@ -1,3 +1,5 @@
+package Interface;
+
 public class Monkey implements Creature, Walking {
   boolean climbing = false;
 

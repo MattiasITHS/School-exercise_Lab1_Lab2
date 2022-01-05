@@ -1,3 +1,5 @@
+package Interface;
+
 public abstract class Mortal implements Caller {
   private int health;
 

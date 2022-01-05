@@ -1,3 +1,5 @@
+package CatDog;
+
 public class CatDogAnimal{
   public boolean sheltered = false;
 

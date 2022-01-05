@@ -1,8 +1,5 @@
 package Lab2;
-<<<<<<< HEAD
 
-=======
->>>>>>> 93cdc12171de665c2bfa532298358a8df06148fa
 import java.util.Scanner;
 public class Board {
   public static Scanner input = new Scanner(System.in);

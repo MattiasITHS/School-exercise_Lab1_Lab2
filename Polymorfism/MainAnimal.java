@@ -1,3 +1,9 @@
+package Polymorfism;
+
+import CatDog.Cat;
+import CatDog.CatDogAnimal;
+import CatDog.Dog;
+
 public class MainAnimal{
   public static void main(String[]args){
     SuperLion l1 = new SuperLion("Simba");

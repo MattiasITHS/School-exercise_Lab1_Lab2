@@ -1,3 +1,5 @@
+package Interface;
+
 public class Duck implements Creature, Flying, Aquatic, Walking {
   boolean climbing = false;
   boolean submerged = false;

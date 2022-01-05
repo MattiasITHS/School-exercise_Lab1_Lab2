@@ -1,3 +1,5 @@
+package Polymorfism;
+
 public class SuperAnimal{
 
   private String name;

@@ -1,3 +1,5 @@
+package CatDog;
+
 public class Cat extends CatDogAnimal{
 
   public void makeSound(){

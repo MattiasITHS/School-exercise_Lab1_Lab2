@@ -1,3 +1,7 @@
+package Interface;
+
+import Interface.*;
+
 public class MainMonster {
   public static void main(String[]args) {
     Dragon d1 = new Dragon();
@@ -8,8 +12,8 @@ public class MainMonster {
     //fight(r1);
     fight(g1);
 
-    heal(d1);
-    heal(r1);
+    //heal(d1);
+    //heal(r1);
     //heal(g1);
   }
 

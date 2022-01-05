@@ -1,3 +1,5 @@
+package House;
+
 public class HouseProgram{
   public static void main(String[]args){
 

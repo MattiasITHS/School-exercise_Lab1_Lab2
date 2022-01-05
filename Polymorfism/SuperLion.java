@@ -1,3 +1,5 @@
+package Polymorfism;
+
 public class SuperLion extends SuperAnimal{
   public SuperLion(String name){
     super(name);

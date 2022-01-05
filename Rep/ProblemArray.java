@@ -1,3 +1,5 @@
+package Rep;
+
 public class ProblemArray {
 
   public int[] createArray (int length, int number, int position) throws ArrayLengthException{

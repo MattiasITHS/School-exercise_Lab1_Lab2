@@ -1,3 +1,5 @@
+package Polymorfism;
+
 public class SuperMain{
   public static void main(String[]args){
     SuperTeacher t1 = new SuperTeacher("Vincent");

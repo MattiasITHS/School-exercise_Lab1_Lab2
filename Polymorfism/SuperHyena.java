@@ -1,3 +1,5 @@
+package Polymorfism;
+
 public class SuperHyena extends SuperAnimal{
 
   public SuperHyena(String name){
